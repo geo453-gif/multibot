@@ -1,0 +1,33 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "nixpacks"
+  },
+  "deploy": {
+    "startCommand": "node bot.js",
+    "restartPolicy": "always",
+    "healthchecks": {
+      "enabled": true,
+      "interval": 10,
+      "timeout": 5
+    }
+  },
+  "variables": {
+    "DISCORD_TOKEN": {
+      "description": "Your Discord bot token from Discord Developer Portal",
+      "value": ""
+    },
+    "CLIENT_ID": {
+      "description": "Your Discord application ID from Developer Portal",
+      "value": ""
+    },
+    "PORT": {
+      "description": "Port for web dashboard",
+      "value": "3000"
+    },
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    }
+  }
+}
